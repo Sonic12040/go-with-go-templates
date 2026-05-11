@@ -1,0 +1,36 @@
+<!-- The Main Page Content -->
+{{ define "content" }}
+<div class="space-y-6 max-w-4xl mx-auto mt-8">
+  <!-- Header -->
+  <div class="bg-gray-800 p-6 rounded-lg shadow border border-gray-700">
+    <h1 class="text-2xl font-bold text-white mb-1">App Dashboard</h1>
+    <p class="text-gray-400 text-sm">
+      Boilerplate is ready. Ping the server to test connectivity.
+    </p>
+  </div>
+
+  <!-- The HTMX Action -->
+  <div class="bg-gray-800 p-6 rounded-lg shadow border border-gray-700">
+    <!-- 
+          hx-post: Send a POST request to /ping
+          hx-target: Inject the response into the <pre> below
+          hx-swap: Replace the inner HTML of the target
+        -->
+    <button
+      hx-post="/ping"
+      hx-target="#response-container"
+      hx-swap="innerHTML"
+      class="bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2 px-6 rounded transition-colors"
+    >
+      Ping Server
+    </button>
+  </div>
+
+  <!-- The Response Output -->
+  <div
+    class="bg-gray-950 rounded-lg shadow border border-gray-700 p-4 min-h-[100px]"
+  >
+    <pre id="response-container" class="text-green-400 font-mono text-sm break-all whitespace-pre-wrap">Awaiting action...</pre>
+  </div>
+</div>
+{{ end }}

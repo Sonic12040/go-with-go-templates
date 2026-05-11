@@ -1,0 +1,7 @@
+[build]
+  # Change "bin" to "entrypoint"
+  entrypoint = "./tmp/main"
+  cmd = "go build -o ./tmp/main ./cmd/server/main.go"
+  delay = 1000
+  exclude_dir = ["assets", "tmp", "vendor"]
+  include_ext = ["go", "tpl", "tmpl", "html"]

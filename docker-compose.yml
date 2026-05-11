@@ -1,0 +1,16 @@
+services:
+  app:
+    container_name: interview-platform-go
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080" # Standard Go web port
+    volumes:
+      - .:/app # The "Magic Link" that enables hot-reloading
+    environment:
+      - APP_ENV=local
+      - PORT=8080
+    # Ensuring the container stays alive if the build fails temporarily
+    stdin_open: true
+    tty: true

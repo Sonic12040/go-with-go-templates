@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App Dashboard</title>
+    <!-- Tailwind for modern, sleek UI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- HTMX for AJAX-like feel without JS -->
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+  </head>
+  <body class="bg-gray-900 text-gray-100 font-sans">
+    <nav class="border-b border-gray-800 p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <span class="font-bold text-xl tracking-tight">GO_APP</span>
+        <div id="status-indicator" class="text-green-400 text-sm">
+          ● System Online
+        </div>
+      </div>
+    </nav>
+    <main class="container mx-auto p-6">{{ template "content" . }}</main>
+  </body>
+</html>
